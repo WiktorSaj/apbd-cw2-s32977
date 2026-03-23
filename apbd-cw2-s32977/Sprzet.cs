@@ -8,7 +8,7 @@ public abstract class Sprzet
     
     private double pricePerDay {get; set;}
 
-    Sprzet(int id, bool available, String name, double pricePerDay)
+    public Sprzet(int id, bool available, String name, double pricePerDay)
     {
         this.id = id;
         this.available = available;

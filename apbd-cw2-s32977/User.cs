@@ -8,7 +8,7 @@ public abstract class User
     
     private string surname { get; set; }
     
-    User(int id, string name, string surname)
+    public User(int id, string name, string surname)
     {
         this.id = id;
         this.name = name;
