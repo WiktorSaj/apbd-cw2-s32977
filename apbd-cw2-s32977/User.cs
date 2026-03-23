@@ -2,11 +2,11 @@
 
 public abstract class User
 {
-    private int id { get; set; }
+    public int id { get; set; }
     
-    private string name { get; set; }
+    public string name { get; set; }
     
-    private string surname { get; set; }
+    public string surname { get; set; }
     
     public User(int id, string name, string surname)
     {

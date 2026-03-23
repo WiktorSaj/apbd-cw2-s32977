@@ -2,8 +2,8 @@
 
 public class Laptop : Sprzet
 {
- private int ramInGB { get; set; }
- private double weightInKg { get; set; }
+ public int ramInGB { get; set; }
+ public double weightInKg { get; set; }
 
  public Laptop(int id, bool available, String name, double pricePerDay, int ramInGB, double weightInKg) : base(id,
   available, name, pricePerDay)

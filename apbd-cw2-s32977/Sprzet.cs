@@ -2,11 +2,11 @@
 
 public abstract class Sprzet
 {
-    private int id {get; set;}
-    private bool available {get; set;}
-    private String name {get; set;}
+    public int id {get; set;}
+    public bool available {get; set;}
+    public String name {get; set;}
     
-    private double pricePerDay {get; set;}
+    public double pricePerDay {get; set;}
 
     public Sprzet(int id, bool available, String name, double pricePerDay)
     {

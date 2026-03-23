@@ -2,11 +2,11 @@
 
 public class Rental
 {
-    private User user;
-    private Sprzet sprzet;
-    private DateTime start;
-    private DateTime expectedEnd;
-    private DateTime? realEnd;
+    public User user{ get; set; }
+    public Sprzet sprzet{ get; set; }
+    public DateTime start{ get; set; }
+    public DateTime expectedEnd{ get; set; }
+    public DateTime? realEnd{ get; set; }
 
     public Rental(User user, Sprzet sprzet, DateTime start, DateTime expectedEnd)
     {

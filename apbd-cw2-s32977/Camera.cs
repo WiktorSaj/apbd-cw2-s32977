@@ -2,8 +2,8 @@
 
 public class Camera:Sprzet
 {
-    private int iso{ get; set; }
-    private double aperture{ get; set; }
+    public int iso{ get; set; }
+    public double aperture{ get; set; }
     
     public Camera(int id, bool available, String name, double pricePerDay, int iso, double aperture) : base(id,
         available, name, pricePerDay)
