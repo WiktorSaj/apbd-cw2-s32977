@@ -57,6 +57,28 @@ public class Service
         Console.WriteLine("Odnotowano zwrot");
         
     }
+
+
+
+    public void AllEquipment()
+    {
+        foreach (Sprzet sprzet in dataBase.sprzet)
+        {
+         Console.WriteLine("Sprzęt: " + sprzet.name + " Cena za dzień: "+ sprzet.pricePerDay + " Status: " + sprzet.available);   
+        }
+    }
+
+
+    public void AvailableEquipment()
+    {
+        foreach (Sprzet sprzet in dataBase.sprzet)
+        {
+            if (sprzet.available)
+            {
+                Console.WriteLine("Sprzęt: " + sprzet.name + " Cena za dzień: " + sprzet.pricePerDay);
+            }
+        }
+    }
     
 
 
