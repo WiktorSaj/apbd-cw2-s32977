@@ -1,6 +1,4 @@
-﻿using System.Security.AccessControl;
-
-namespace apbd_cw2_s32977;
+﻿namespace apbd_cw2_s32977;
 
 public class Service
 {
@@ -31,6 +29,32 @@ public class Service
         sprzet.available = false;
         
         Console.WriteLine("Zapisano wypożyczenie");
+        
+    }
+
+    public void ReturnEquipment(Rental rental, DateTime realEnd)
+    {
+        if (rental.realEnd != null)
+        {
+            Console.WriteLine("Sprzęt był już wcześniej oddany");
+            return;
+        }
+        
+        rental.realEnd = realEnd;
+        rental.sprzet.available = true;
+
+
+        if (rental.expectedEnd >= realEnd)
+        {
+            rental.penalty = 0;
+        }
+        else
+        {
+            int late = (realEnd - rental.expectedEnd).Days;
+            rental.penalty = late * 2 * rental.sprzet.pricePerDay;
+        }
+        
+        Console.WriteLine("Odnotowano zwrot");
         
     }
     

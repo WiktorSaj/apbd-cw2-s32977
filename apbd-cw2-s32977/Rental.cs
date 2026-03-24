@@ -7,6 +7,8 @@ public class Rental
     public DateTime start{ get; set; }
     public DateTime expectedEnd{ get; set; }
     public DateTime? realEnd{ get; set; }
+    
+    public double penalty { get; set; }
 
     public Rental(User user, Sprzet sprzet, DateTime start, DateTime expectedEnd)
     {
@@ -15,6 +17,7 @@ public class Rental
         this.start = start;
         this.expectedEnd = expectedEnd;
         this.realEnd = null;
+        this.penalty = 0;
     }
     
 }
