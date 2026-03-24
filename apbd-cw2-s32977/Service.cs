@@ -79,6 +79,21 @@ public class Service
             }
         }
     }
+
+
+    public void MarkUnavailableEquipment(Sprzet sprzet)
+    {
+        if (sprzet.available)
+        {
+            sprzet.available = false;
+            Console.WriteLine("Sprzęt oznaczono jako niedostępny");
+        }
+        else
+        {
+            Console.WriteLine("Sprzęt jest już niedostępny");
+        }
+            
+    }
     
 
 
