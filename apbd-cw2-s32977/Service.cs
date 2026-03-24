@@ -135,6 +135,20 @@ public class Service
                           " Liczba aktualnych wypożyczeń po terminie:  " + late
                           );
     }
+
+
+    public void ActiveUsersRentals(User user)
+    {
+        foreach (Rental rental in dataBase.rentals)
+            {
+                if (user == rental.user && rental.realEnd == null)
+                {
+                    Console.WriteLine("Sprzęt: " + rental.sprzet.name + " Termin: " + rental.expectedEnd);
+
+                }
+            }
+        
+    }
     
     
     
