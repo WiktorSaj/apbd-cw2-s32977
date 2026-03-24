@@ -104,6 +104,37 @@ public class Service
                 Console.WriteLine("Użytkownik: " + rental.user.surname + " Sprzęt: " + rental.sprzet.name+ " Termin: " + rental.expectedEnd);
             }
     }
+
+
+    public void GenerateRaport()
+    {
+        int available = 0;
+
+        foreach (Sprzet sprzet in dataBase.sprzet)
+        {
+            if (sprzet.available)
+            {
+                available++;
+            }
+        }
+
+        int late = 0;
+            
+        foreach (Rental rental in dataBase.rentals)
+            if (rental.realEnd != null && DateTime.Now > rental.expectedEnd)
+            {
+                late++;
+            }
+        
+        
+        
+        Console.WriteLine("Liczba sprzetów w wypożyczalni: " +
+                          dataBase.sprzet.Count +
+                          " Dostępne:  " + available +
+                          " Liczba wypożyczeń w historii: " + dataBase.rentals.Count +
+                          " Liczba aktualnych wypożyczeń po terminie:  " + late
+                          );
+    }
     
     
     
