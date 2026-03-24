@@ -99,7 +99,7 @@ public class Service
     public void ShowLateRentals()
     {
         foreach (Rental rental in dataBase.rentals)
-            if (rental.realEnd != null && DateTime.Now > rental.expectedEnd)
+            if (rental.realEnd == null && DateTime.Now > rental.expectedEnd)
             {
                 Console.WriteLine("Użytkownik: " + rental.user.surname + " Sprzęt: " + rental.sprzet.name+ " Termin: " + rental.expectedEnd);
             }
@@ -121,7 +121,7 @@ public class Service
         int late = 0;
             
         foreach (Rental rental in dataBase.rentals)
-            if (rental.realEnd != null && DateTime.Now > rental.expectedEnd)
+            if (rental.realEnd == null && DateTime.Now > rental.expectedEnd)
             {
                 late++;
             }
