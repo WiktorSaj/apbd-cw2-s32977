@@ -9,27 +9,29 @@ public class Service
         this.dataBase = dataBase;
     }
 
-    public void RentEquipment(User user, Sprzet sprzet, DateTime start, DateTime expectedEnd)
+    public Rental RentEquipment(User user, Sprzet sprzet, DateTime start, DateTime expectedEnd)
     {
 
         if (!sprzet.available)
         {
             Console.WriteLine("Sprzęt niedostępny");
-            return;
+            return null;
         }
 
         if (CountRentsForUser(user) >= Limit(user))
         {
             Console.WriteLine("Osiągnięto limit wypożyczeń");
-            return;
+            return null;
         }
-        
-        
-        dataBase.addRental(new Rental(user, sprzet, start, expectedEnd));
+
+        Rental rental = new Rental(user, sprzet, start, expectedEnd);
+        dataBase.addRental(rental);
         sprzet.available = false;
         
         Console.WriteLine("Zapisano wypożyczenie");
-        
+
+        return rental;
+
     }
 
     public void ReturnEquipment(Rental rental, DateTime realEnd)
